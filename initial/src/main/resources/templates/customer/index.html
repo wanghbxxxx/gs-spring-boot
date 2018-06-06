@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <p shiro:guest="">Please <a href="login.html">login</a></p>
+    <p shiro:authenticated="">
+      Hello, <span shiro:principal=""></span>, how are you today?
+    </p>
+    <p th:text="'Hello ' + ${customer.firstName} + '!'" />
+</body>
+</html>

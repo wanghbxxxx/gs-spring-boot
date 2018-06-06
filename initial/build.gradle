@@ -19,7 +19,7 @@ bootJar {
 }
 
 repositories {
-    mavenCentral()
+    maven { url 'http://180.76.158.183:8081/repository/maven-public/' }
 }
 
 sourceCompatibility = 1.8
@@ -27,6 +27,28 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile('org.springframework.boot:spring-boot-starter-data-redis-reactive')
+	
+    compile("mysql:mysql-connector-java")
+    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+    compile("javax.servlet:jstl")
+    compile("org.sitemesh:sitemesh:3.0.1")
+    compile('org.apache.shiro:shiro-spring:1.2.3')
+    compile('org.apache.shiro:shiro-ehcache:1.2.3')
+    compile('com.github.theborakompanioni:thymeleaf-extras-shiro:+')
+    
+    compile("org.springframework.boot:spring-boot-devtools")
+    
+    // compile 'org.springframework.session:spring-session-jdbc'
+    compile 'org.springframework.session:spring-session-data-redis'
+    
     testCompile("junit:junit")
+    testCompile("com.h2database:h2")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile('com.github.springtestdbunit:spring-test-dbunit:1.2.1')
+    testCompile('org.dbunit:dbunit:2.5.1')
+    
 }
 
